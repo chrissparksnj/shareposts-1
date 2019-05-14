@@ -9,3 +9,6 @@
   <title><?php echo $data['title']; ?></title>
 </head>
 <body>
+  <?php require __DIR__ . '/navbar.php';?>
+  <div class="container">
+
