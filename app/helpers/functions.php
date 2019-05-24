@@ -31,3 +31,11 @@ function h($str)
   return htmlspecialchars($str, ENT_QUOTES);
 }
 
+function isLoggedIn()
+{
+  if (isset($_SESSION['user_id'])) {
+    return true;
+  } else {
+    return false;
+  }
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 20 2019 г., 17:09
+-- Время создания: Май 24 2019 г., 16:05
 -- Версия сервера: 5.7.20
 -- Версия PHP: 7.1.12
 
@@ -36,6 +36,14 @@ CREATE TABLE `posts` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Дамп данных таблицы `posts`
+--
+
+INSERT INTO `posts` (`id`, `user_id`, `title`, `body`, `created_at`) VALUES
+(1, 1, 'Post One', 'This is a test for post one', '2019-05-24 15:10:10'),
+(2, 1, 'Post Two', 'This is a test for post two', '2019-05-24 16:10:10');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +57,13 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`) VALUES
+(1, 'Sergey Bobkov', 'sergey_bobkov@inbox.ru', '$2y$10$OxnP/534N.1sUA0KdoK9tu.gaDCfCH1xSkq9YZl33PIAjahtd1.xO', '2019-05-23 14:47:33');
 
 --
 -- Индексы сохранённых таблиц
@@ -74,13 +89,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
