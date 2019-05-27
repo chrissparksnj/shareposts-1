@@ -1,4 +1,5 @@
 <?php require __DIR__ . '/../inc/header.php';?>
+<?php flash('post_message');?>
   <div class="row align-items-center mb-3">
     <div class="col-md-6">
       <h1><?php echo $data['title']?></h1>
@@ -9,7 +10,6 @@
       </a>
     </div>
   </div>
-
     <?php foreach ($data['posts'] as $post) {?>
         <div class="card card-body mb-3">
           <h2 class="card-title"><?php echo $post->title; ?></h2>
@@ -19,7 +19,7 @@
           <p class="card-text">
             <?php echo $post->body; ?>
           </p>
-          <a href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->id; ?>" class="btn btn-dark">More</a>
+          <a href="<?php echo URLROOT; ?>/posts/show/<?php echo $post->postId; ?>" class="btn btn-dark">More</a>
         </div>
     <?php } ?>
 
